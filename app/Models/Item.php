@@ -13,8 +13,14 @@ class Item extends Model
         'category_name'
     ];
 
+
+    public function transactions()
+    {
+        return $this->hasMany(Transaction::class, 'item_name', 'item_name');
+    }
+
     public function category() 
     {
-        return $this->belongsTo(Category::class, 'category_name', 'name');
+        return $this->belongsTo(Category::class, 'category_name', 'category_name');
     }
 }
