@@ -19,6 +19,11 @@ class Item extends Model
         return $this->hasMany(Transaction::class, 'item_name', 'item_name');
     }
 
+    public function reports()
+    {
+        return $this->hasMany(Report::class, 'item_name', 'item_name');
+    }
+
     public function category() 
     {
         return $this->belongsTo(Category::class, 'category_name', 'category_name');
