@@ -59,6 +59,7 @@ class TransactionController extends Controller
         $transactions = Transaction::findOrFail($id);
         $transactions->delete();
 
-        return response()->json(['data' => $transactions]);
+        return response()->json(['message' => 'Successfully deleted!',
+        'data' => $transactions]);
     }
 }
